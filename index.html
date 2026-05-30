@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business Processes Exam | BUSPROS-W8 | NU Fairview</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+  <link rel="icon" type="image/png" href="assets/cedd-logo-mark.png">
+  <link rel="apple-touch-icon" href="assets/cedd-logo-mark.png">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -167,7 +168,18 @@
     .top-bar-logo {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+    }
+    .top-logo-mark {
+      width: 28px;
+      height: 28px;
+      display: block;
+      flex: 0 0 28px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid rgba(79,127,255,0.28);
+      box-shadow: 0 6px 16px rgba(37,99,235,0.18);
+      background: #101114;
     }
     .top-bar-logo .lucide-icon,
     .top-github-link .lucide-icon,
@@ -189,6 +201,14 @@
     .mobile-btn-icon .lucide-icon {
       width: 15px;
       height: 15px;
+    }
+    @media (max-width: 767px), (pointer: coarse) {
+      .top-logo-mark {
+        width: 24px;
+        height: 24px;
+        flex-basis: 24px;
+        border-radius: 7px;
+      }
     }
 
     /* =====================================================
@@ -6296,7 +6316,7 @@
       // Title
       document.title = `${EXAM_CONFIG.subjectName} Exam | ${EXAM_CONFIG.subjectCode} | ${EXAM_CONFIG.topic} | NU Fairview`;
       // Top bar
-      document.getElementById('top-bar-logo').innerHTML = iconHTML('ClipboardList') + `<span>${escapeHTML(EXAM_CONFIG.subjectCode)}</span>`;
+      document.getElementById('top-bar-logo').innerHTML = `<img class="top-logo-mark" src="assets/cedd-logo-mark.png" alt="" loading="eager" decoding="async"><span>${escapeHTML(EXAM_CONFIG.subjectCode)}</span>`;
       document.getElementById('top-bar-meta').textContent = `${EXAM_CONFIG.subjectName} — ${EXAM_CONFIG.topic}`;
       const topGhLink = document.getElementById('top-github-link');
       if (topGhLink) {
